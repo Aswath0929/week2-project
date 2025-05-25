@@ -1,4 +1,16 @@
 # week2-project
 PROJECT-ROBOTIC ARM
-![WhatsApp Image 2025-05-25 at 12 37 03_53716220](https://github.com/user-attachments/assets/8f50ae30-1d9b-4436-9586-57d5136a5a46)
+BILL OF MATERIALS
+| Item           | Cost / Notes        |
+| -------------- | ------------------- |
+| SERVO          | Rs 150              | 2
+| MPU6050        | Rs 400              |
+| Arms and Table | To be printed in TL |
+
+TOTAL- 700
+Basic visualisation of our robotic arm
+![WhatsApp Image 2025-05-25 at 05 33 43_9b663ca4](https://github.com/user-attachments/assets/203e494f-7578-4e78-b83a-a799d16ff5f6)
+
+
+
 
