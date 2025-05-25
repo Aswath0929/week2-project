@@ -19,7 +19,7 @@ CIRCUIT
 SIMULATION
 
 CODE
-<pre>'''cpp 
+<pre> 
 #include <Wire.h>
 #include <Servo.h>
 
