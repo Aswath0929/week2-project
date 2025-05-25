@@ -19,6 +19,7 @@ CIRCUIT
 SIMULATION
 
 CODE
+<pre>'''cpp 
 #include <Wire.h>
 #include <Servo.h>
 
@@ -31,7 +32,7 @@ int16_t AcX, AcY, AcZ;
 void setup() {
   Wire.begin();
   Wire.beginTransmission(MPU);
-  Wire.write(0x6B);  // power management register
+  Wire.write(0x6B);  // Power management register
   Wire.write(0);
   Wire.endTransmission(true);
 
@@ -41,8 +42,9 @@ void setup() {
 }
 
 void loop() {
+  // Request accelerometer data
   Wire.beginTransmission(MPU);
-  Wire.write(0x3B);  // starting with Accel X-out
+  Wire.write(0x3B);  // Starting with Accel X-out
   Wire.endTransmission(false);
   Wire.requestFrom(MPU, 6, true);
 
@@ -54,21 +56,21 @@ void loop() {
   float Ay = AcY / 16384.0;
   float Az = AcZ / 16384.0;
 
-  // Compute roll and pitch
+  // Compute roll and pitch in degrees
   float roll  = atan2(Ay, Az) * 180.0 / PI;
   float pitch = atan2(-Ax, sqrt(Ay * Ay + Az * Az)) * 180.0 / PI;
 
-  // Map to servo range
+  // Map angles to servo values
   int rollAngle  = map(roll,  -90, 90, 0, 180);
   int pitchAngle = map(pitch, -90, 90, 0, 180);
 
-  // Send to servos
+  // Set servo positions
   rollServo.write(rollAngle);
   pitchServo.write(pitchAngle);
 
-  delay(20);  // smooth motion
+  delay(20);  // Smooth motion
 }
-
+</pre>
 
 
 
